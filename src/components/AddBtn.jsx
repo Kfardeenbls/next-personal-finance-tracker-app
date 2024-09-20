@@ -4,7 +4,7 @@ const AddBtn = ({ handleSubmit, showAddForm }) => {
   return (
     <button
       type="submit"
-      onClick={handleSubmit}
+      onClick={(e) => handleSubmit(e)}
       style={{
         display: `${showAddForm ? "none" : "block"}`,
       }}

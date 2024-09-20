@@ -6,7 +6,6 @@ import BudgetGoals from "@/components/BudgetGoals";
 import MonthlyTracking from "@/components/MonthlyTracking";
 import SpendingHabitsChart from "@/features/SpendingHabitsChart";
 import IncomeSourcesChart from "@/features/IncomeSourcesChart";
-import CurrencyConverter from "@/components/CurrencyConverter";
 
 export default function Dashboard() {
   const financialSummary = [

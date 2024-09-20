@@ -34,9 +34,22 @@ const SpendingHabitsChart = () => {
       },
     ],
   };
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
 
   return (
-    <div className="flex-1">
+    <div
+      className="flex-1 flex justify-center items-center "
+      style={{
+        width: "100%",
+        height: "400px",
+        flexDirection: "column",
+        gap: "20px",
+        margin: "auto 0",
+      }}
+    >
       <h3 className="text-lg font-semibold">Spending Habits</h3>
       <Bar data={chartData} />
     </div>

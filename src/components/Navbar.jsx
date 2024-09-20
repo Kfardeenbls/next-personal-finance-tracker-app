@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-indigo-500 p-4 shadow-lg relative">
+    <nav className="bg-gradient-to-r from-blue-500 to-indigo-500 p-4 shadow-lg relative sticky top-0">
       <div className="container mx-auto flex justify-between items-center relative">
         <div className="text-white font-semibold text-xl">
           Financial Tracker
@@ -27,7 +27,7 @@ const Navbar = () => {
           <MobileCloseBtn toggleMenu={toggleMenu} isOpen={isOpen} />
         </div>
         <ul
-          className={`lg:flex lg:space-x-8 space-y-2 lg:space-y-0 absolute lg:static lg:bg-transparent w-full left-0 lg:w-auto transition-all duration-300 ease-in-out ${
+          className={`bg-gradient-to-r from-blue-500 to-indigo-500 lg:flex lg:space-x-8 space-y-2 lg:space-y-0 absolute lg:static lg:bg-transparent w-full left-0 lg:w-auto transition-all duration-300 ease-in-out ${
             isOpen ? "top-16" : "top-[-400px]"
           } z-40`}
         >

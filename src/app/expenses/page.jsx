@@ -7,9 +7,9 @@ const page = () => {
   return (
     <div>
       <Expense />
-      <div className="m-4 flex space-x-2 flex-wrap">
-        <SpendingOverview />
+      <div className="m-4 flex space-x-2 flex-wrap" style={{ gap: "20px" }}>
         <SpendingHabitsChart />
+        <SpendingOverview />
       </div>
     </div>
   );

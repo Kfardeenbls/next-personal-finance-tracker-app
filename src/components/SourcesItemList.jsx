@@ -5,6 +5,7 @@ import {
 } from "@/redux/slice/incomeSlice";
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "./DeleteBtn";
+import UpdateBtn from "./UpdateBtn";
 
 const SourcesItemList = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const SourcesItemList = () => {
   };
 
   const handleUpdate = (e, index) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default behavior
     const { source, amount } = editedSources[index];
     const oldSource = sources[index].source;
 
@@ -67,12 +68,9 @@ const SourcesItemList = () => {
               style={{ margin: "0 10px" }}
             />
           </div>
-          <button
-            className="ml-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded"
-            onClick={(e) => handleUpdate(e, index)}
-          >
-            Update
-          </button>
+          <UpdateBtn
+            updatedItem={(e) => handleUpdate(e, index)} // Pass event and index
+          />
           <DeleteBtn
             deleteItem={(e) => handleDelete(item.source)}
             itemName={item.source}

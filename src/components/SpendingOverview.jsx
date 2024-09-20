@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // SpendingOverview Component
 export default function SpendingOverview() {
   const data = {
@@ -22,6 +24,17 @@ export default function SpendingOverview() {
           </li>
         ))}
       </ul>
+      <div className="relative" style={{ height: "300px" }}>
+        <Image
+          src="/expense.png"
+          alt="income"
+          fill
+          style={{
+            objectFit: "scale-down",
+            position: "absolute",
+          }}
+        />
+      </div>
     </div>
   );
 }

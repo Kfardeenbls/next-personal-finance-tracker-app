@@ -23,7 +23,6 @@ const expenseSlice = createSlice({
       const { type, amount } = action.payload;
       state.breakdown.push({ type, amount: Number(amount) });
       state.totalExpenses = calculateTotalExpenses(state.breakdown);
-      console.log("breakdown 1", breakdown);
     },
     editExpense: (state, action) => {
       const { oldType, type, amount } = action.payload;

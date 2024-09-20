@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { editExpense, deleteExpense } from "@/redux/slice/expenseSlice";
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "./DeleteBtn";
+import UpdateBtn from "./UpdateBtn";
 
 const ItemListExpenses = () => {
   const dispatch = useDispatch();
@@ -64,12 +65,8 @@ const ItemListExpenses = () => {
               style={{ margin: "0 10px" }}
             />
           </div>
-          <button
-            className="ml-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded"
-            onClick={(e) => handleUpdate(e, index)}
-          >
-            Update
-          </button>
+          <UpdateBtn updatedItem={(e) => handleUpdate(e, index)} />
+
           <DeleteBtn
             deleteItem={(e) => handleDelete(item.type)}
             itemName={item.type}

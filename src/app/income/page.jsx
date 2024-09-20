@@ -46,9 +46,9 @@ const Income = () => {
           Edit
         </button>
       </div>
-      <div className="m-4 flex space-x-2 flex-wrap">
-        <IncomeSource />
+      <div className="m-4 flex space-x-2 flex-wrap" style={{ gap: "20px" }}>
         <IncomeSourcesChart />
+        <IncomeSource />
       </div>
     </div>
   );

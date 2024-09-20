@@ -34,7 +34,10 @@ const IncomeSourcesChart = () => {
   };
 
   return (
-    <div style={{ margin: "20px" }} className="flex-1">
+    <div
+      style={{ margin: "20px" }}
+      className="flex-1 flex justify-center items-center"
+    >
       <div style={{ width: "100%", height: "400px" }}>
         {" "}
         <h3 className="text-lg font-semibold">Income Sources</h3>

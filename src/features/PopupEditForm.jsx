@@ -98,29 +98,29 @@ const PopupEditForm = () => {
   };
 
   const inlineStyle = {
-    backgroundColor: "#ffffff", // bg-white
-    borderRadius: "0.5rem", // rounded-lg
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)", // shadow-lg
-    padding: "1.5rem", // p-6
-    width: "100%", // w-full
-    maxWidth: "32rem", // max-w-lg
-    margin: "0 1rem", // mx-4
+    backgroundColor: "#ffffff",
+    borderRadius: "0.5rem",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+    padding: "1.5rem",
+    width: "100%",
+    maxWidth: "32rem",
+    margin: "0 1rem",
 
     // Responsive margins
-    "@media (min-width: 640px)": { margin: "0 1.5rem" }, // sm:mx-6
-    "@media (min-width: 768px)": { margin: "0 2rem" }, // md:mx-8
-    "@media (min-width: 1024px)": { margin: "0 2.5rem" }, // lg:mx-10
-    "@media (min-width: 1280px)": { width: "66.6667%" }, // xl:w-2/3
-    "@media (min-width: 1536px)": { width: "50%" }, // 2xl:w-1/2
+    "@media (min-width: 640px)": { margin: "0 1.5rem" },
+    "@media (min-width: 768px)": { margin: "0 2rem" },
+    "@media (min-width: 1024px)": { margin: "0 2.5rem" },
+    "@media (min-width: 1280px)": { width: "66.6667%" },
+    "@media (min-width: 1536px)": { width: "50%" },
   };
 
   const buttonStyle = {
-    backgroundColor: "#48bb78", // Tailwind's bg-green-500
-    color: "#ffffff", // Tailwind's text-white
-    padding: "0.5rem 1rem", // Tailwind's px-4 py-2
-    borderRadius: "0.375rem", // Tailwind's rounded-md
-    width: "100%", // Tailwind's w-full
-    marginTop: "1rem", // Tailwind's mt-4
+    backgroundColor: "#48bb78",
+    color: "#ffffff",
+    padding: "0.5rem 1rem",
+    borderRadius: "0.375rem",
+    width: "100%",
+    marginTop: "1rem",
   };
 
   return (

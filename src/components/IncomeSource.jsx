@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // IncomeSource Component
 export default function IncomeSource() {
   const data = {
@@ -10,19 +12,32 @@ export default function IncomeSource() {
     ],
   };
   return (
-    <div className="bg-white p-6 shadow-md rounded-lg flex-1">
-      <h2 className="text-xl font-semibold">{data.category}</h2>
-      <p className="text-gray-500">{data.summary}</p>
+    <>
+      <div className="bg-white p-6 shadow-md rounded-lg flex-1">
+        <h2 className="text-xl font-semibold">{data.category}</h2>
+        <p className="text-gray-500">{data.summary}</p>
 
-      {/* List of Income Sources */}
-      <ul className="mt-4">
-        {data.sources.map((source, index) => (
-          <li key={index} className="flex justify-between">
-            <span>{source.source}</span>
-            <span>{source.percentage}%</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+        {/* List of Income Sources */}
+        <ul className="mt-4">
+          {data.sources.map((source, index) => (
+            <li key={index} className="flex justify-between">
+              <span>{source.source}</span>
+              <span>{source.percentage}%</span>
+            </li>
+          ))}
+        </ul>
+        <div className="relative" style={{ height: "300px" }}>
+          <Image
+            src="/income.png"
+            alt="income"
+            fill
+            style={{
+              objectFit: "scale-down",
+              position: "absolute",
+            }}
+          />
+        </div>
+      </div>
+    </>
   );
 }
