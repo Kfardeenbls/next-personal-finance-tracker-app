@@ -1,0 +1,60 @@
+/* General Styles */
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  display: block;
+  border-radius: 4px;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Individual bar positions */
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: 13.5px;
+}
+
+.bar4 {
+  bottom: 0;
+}
+
+/* Toggle animations */
+.translateX40 {
+  transform: translateX(40px);
+  background-color: transparent;
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+}
+
+.rotateNeg45 {
+  transform: rotate(-45deg);
+}
+
+.translateXNeg40 {
+  transform: translateX(-40px);
+  background-color: transparent;
+}

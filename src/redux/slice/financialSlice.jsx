@@ -1,15 +1,7 @@
-import Income from "@/components/Income";
-import Expense from "@/components/Expense";
-import SpendingOverview from "@/components/SpendingOverview";
-import IncomeSource from "@/components/IncomeSource";
-import BudgetGoals from "@/components/BudgetGoals";
-import MonthlyTracking from "@/components/MonthlyTracking";
-import SpendingHabitsChart from "@/features/SpendingHabitsChart";
-import IncomeSourcesChart from "@/features/IncomeSourcesChart";
-import CurrencyConverter from "@/components/CurrencyConverter";
+import { createSlice } from "@reduxjs/toolkit";
 
-export default function Dashboard() {
-  const financialSummary = [
+const initialState = {
+  financialSummary: [
     {
       category: "Total Income",
       summary: "Total income from all sources",
@@ -57,28 +49,25 @@ export default function Dashboard() {
         { source: "Passive Income (Investments)", percentage: 13 },
       ],
     },
-  ];
+  ],
+};
 
-  return (
-    <div className="container mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold mb-6">Financial Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Income data={financialSummary[0]} />
+const financialSlice = createSlice({
+  name: "financial",
+  initialState,
+  reducers: {
+    updateFinancialData: (state, action) => {
+      const { category, updatedData } = action.payload;
+      const index = state.financialSummary.findIndex(
+        (item) => item.category === category
+      );
+      if (index !== -1) {
+        state.financialSummary[index] = updatedData;
+      }
+    },
+  },
+});
 
-        <Expense data={financialSummary[1]} />
+export const { updateFinancialData } = financialSlice.actions;
 
-        <SpendingHabitsChart data={financialSummary[3]} />
-
-        <SpendingOverview data={financialSummary[3]} />
-
-        <IncomeSource data={financialSummary[4]} />
-
-        <IncomeSourcesChart data={financialSummary[4]} />
-
-        <BudgetGoals savings={financialSummary[2].amount} />
-
-        <MonthlyTracking />
-      </div>
-    </div>
-  );
-}
+export default financialSlice.reducer;

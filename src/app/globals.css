@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popup-animation {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.popup-animation-in {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.popup-animation-out {
+  animation: fadeOutScale 0.3s ease-in;
+}
+
+.custom-flex-container {
+  display: flex;
+  flex-direction: column; /* Default to column on mobile */
+}
+
+@media (min-width: 768px) {
+  .custom-flex-container {
+    flex-direction: row; /* Switch to row layout on tablet and larger screens */
+    gap: 0; /* Horizontal spacing between items */
+  }
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
