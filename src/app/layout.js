@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <PopupEditForm />
           <main>{children}</main>
-          <footer className="bg-blue-500 text-white p-4 text-center">
+          <footer className="bg-blue-500 text-white p-4 text-centermt-auto">
             &copy; {new Date().getFullYear()} Finance Tracker
           </footer>
         </ReduxProvider>

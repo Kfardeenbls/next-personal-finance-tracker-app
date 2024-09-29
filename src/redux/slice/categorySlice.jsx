@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Initial state
 const initialState = {
   selectedCategory: null,
 };
 
-// Create a slice of the Redux store
 const categorySlice = createSlice({
   name: "category",
   initialState,
