@@ -76,7 +76,7 @@ export default function Dashboard() {
 
         <BudgetGoals savings={financialSummary[2].amount} />
 
-        <MonthlyTracking />
+        <MonthlyTracking data={financialSummary} />
       </div>
     </div>
   );

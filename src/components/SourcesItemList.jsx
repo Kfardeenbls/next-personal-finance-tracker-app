@@ -29,7 +29,7 @@ const SourcesItemList = () => {
   };
 
   const handleUpdate = (e, index) => {
-    e.preventDefault(); // Prevent default behavior
+    e.preventDefault();
     const { source, amount } = editedSources[index];
     const oldSource = sources[index].source;
 
@@ -50,6 +50,7 @@ const SourcesItemList = () => {
             justifyContent: "center",
           }}
         >
+          <span>{index + 1 + "."}</span>
           <input
             type="text"
             value={item.source}

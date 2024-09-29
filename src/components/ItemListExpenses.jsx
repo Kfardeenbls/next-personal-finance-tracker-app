@@ -47,6 +47,7 @@ const ItemListExpenses = () => {
             justifyContent: "center",
           }}
         >
+          <span>{index + 1 + "."}</span>
           <input
             type="text"
             value={item.type}

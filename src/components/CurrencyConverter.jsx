@@ -10,8 +10,6 @@ const CurrencyConverter = () => {
     (state) => state?.currencyConverter?.currencyData
   );
 
-  console.log("exchangeRates", exchangeRates);
-
   const [amount, setAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("EUR");
@@ -31,55 +29,61 @@ const CurrencyConverter = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Currency Converter</h2>
-      <div className={styles.inputContainer}>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className={styles.inputField}
-          placeholder="Amount"
-        />
-
-        <div className={styles.selectContainer}>
-          <label htmlFor="fromCurrency">From:</label>
-          <select
-            id="fromCurrency"
-            value={fromCurrency}
-            onChange={(e) => setFromCurrency(e.target.value)}
-            className={styles.selectField}
-          >
-            {exchangeRates &&
-              Object.keys(exchangeRates).map((currency) => (
-                <option key={currency} value={currency}>
-                  {currency}
-                </option>
-              ))}
-          </select>
+      {!exchangeRates || Object.keys(exchangeRates).length === 0 ? (
+        <div className={styles.loadingContainer}>
+          <div className={styles.spinner}></div>
+          <p>Loading exchange rates...</p>
         </div>
+      ) : (
+        <div className={styles.inputContainer}>
+          <input
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className={styles.inputField}
+            placeholder="Amount"
+          />
 
-        <span> to </span>
+          <div className={styles.selectContainer}>
+            <label htmlFor="fromCurrency">From:</label>
+            <select
+              id="fromCurrency"
+              value={fromCurrency}
+              onChange={(e) => setFromCurrency(e.target.value)}
+              className={styles.selectField}
+            >
+              {exchangeRates &&
+                Object.keys(exchangeRates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+            </select>
+          </div>
 
-        <div className={styles.selectContainer}>
-          <label htmlFor="toCurrency">To:</label>
-          <select
-            id="toCurrency"
-            value={toCurrency}
-            onChange={(e) => setToCurrency(e.target.value)}
-            className={styles.selectField}
-          >
-            {exchangeRates &&
-              Object.keys(exchangeRates).map((currency) => (
-                <option key={currency} value={currency}>
-                  {currency}
-                </option>
-              ))}
-          </select>
+          <span> to </span>
+
+          <div className={styles.selectContainer}>
+            <select
+              id="toCurrency"
+              value={toCurrency}
+              onChange={(e) => setToCurrency(e.target.value)}
+              className={styles.selectField}
+            >
+              {exchangeRates &&
+                Object.keys(exchangeRates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+            </select>
+          </div>
+
+          <button onClick={convertCurrency} className={styles.button}>
+            Convert
+          </button>
         </div>
-
-        <button onClick={convertCurrency} className={styles.button}>
-          Convert
-        </button>
-      </div>
+      )}
 
       {convertedAmount > 0 && (
         <div className={styles.convertedAmount}>

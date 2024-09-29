@@ -106,12 +106,11 @@ const PopupEditForm = () => {
     maxWidth: "32rem",
     margin: "0 1rem",
 
-    // Responsive margins
-    "@media (min-width: 640px)": { margin: "0 1.5rem" },
-    "@media (min-width: 768px)": { margin: "0 2rem" },
-    "@media (min-width: 1024px)": { margin: "0 2.5rem" },
-    "@media (min-width: 1280px)": { width: "66.6667%" },
-    "@media (min-width: 1536px)": { width: "50%" },
+    "@media (minWidth: 640px)": { margin: "0 1.5rem" },
+    "@media (minWidth: 768px)": { margin: "0 2rem" },
+    "@media (minWidth: 1024px)": { margin: "0 2.5rem" },
+    "@media (minWidth: 1280px)": { width: "66.6667%" },
+    "@media (minWidth: 1536px)": { width: "50%" },
   };
 
   const buttonStyle = {

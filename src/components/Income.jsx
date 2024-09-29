@@ -8,7 +8,6 @@ const Income = ({ data }) => {
 
   const dispatch = useDispatch();
 
-  // Function to dispatch multiple actions
   const handleButtonClick = () => {
     dispatch(toggleActive());
     dispatch(setCategory(data.category));

@@ -2,7 +2,7 @@ import styles from "../style/MobileCloseBtn.module.css";
 
 const MobileCloseBtn = ({ toggleMenu, isOpen }) => {
   return (
-    <label onClick={toggleMenu}>
+    <label onClick={toggleMenu} style={{ cursor: "pointer" }}>
       <div className={styles.hamburger}>
         <span
           className={`${styles.bar} ${styles.bar1} ${
