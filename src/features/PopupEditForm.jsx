@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import AddForm from "@/components/AddForm";
 import { useState } from "react";
 import AddBtn from "@/components/AddBtn";
-import ItemList from "@/components/SourcesItemList";
 import ItemListExpenses from "@/components/ItemListExpenses";
 import SourcesItemList from "@/components/SourcesItemList";
 import { toggleActive } from "@/redux/slice/toggleSlice";
@@ -11,7 +10,7 @@ import { toggleActive } from "@/redux/slice/toggleSlice";
 const PopupEditForm = () => {
   const [showAddForm, setShowAddForm] = useState(false);
 
-  const { totalIncome, sources } = useSelector((state) => state.income);
+  const { totalIncome } = useSelector((state) => state.income);
 
   const handleShow = (e) => {
     e.preventDefault();
@@ -113,15 +112,6 @@ const PopupEditForm = () => {
     "@media (minWidth: 1536px)": { width: "50%" },
   };
 
-  const buttonStyle = {
-    backgroundColor: "#48bb78",
-    color: "#ffffff",
-    padding: "0.5rem 1rem",
-    borderRadius: "0.375rem",
-    width: "100%",
-    marginTop: "1rem",
-  };
-
   return (
     <>
       {isActive && (
@@ -183,18 +173,6 @@ const PopupEditForm = () => {
                         Breakdown
                       </label>
                       <ItemListExpenses />
-                    </div>
-                  )}
-
-                  {categoryData.habits && (
-                    <div className="mb-4">
-                      <label
-                        htmlFor="habits"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Habits
-                      </label>
-                      <ItemList data={habits} />
                     </div>
                   )}
                 </>

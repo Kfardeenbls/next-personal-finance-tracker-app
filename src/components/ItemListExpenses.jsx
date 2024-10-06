@@ -69,7 +69,7 @@ const ItemListExpenses = () => {
           <UpdateBtn updatedItem={(e) => handleUpdate(e, index)} />
 
           <DeleteBtn
-            deleteItem={(e) => handleDelete(item.type)}
+            deleteItem={() => handleDelete(item.type)}
             itemName={item.type}
           />
         </li>

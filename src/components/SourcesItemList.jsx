@@ -73,7 +73,7 @@ const SourcesItemList = () => {
             updatedItem={(e) => handleUpdate(e, index)} // Pass event and index
           />
           <DeleteBtn
-            deleteItem={(e) => handleDelete(item.source)}
+            deleteItem={() => handleDelete(item.source)}
             itemName={item.source}
           />
         </li>
