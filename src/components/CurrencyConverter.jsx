@@ -28,6 +28,10 @@ const CurrencyConverter = () => {
 
   return (
     <div className={styles.container}>
+      {!exchangeRates ||
+        (Object.keys(exchangeRates).length === 0 && (
+          <p className="text-red-500">Please check your internet connection</p>
+        ))}
       <h2 className={styles.heading}>Currency Converter</h2>
       {!exchangeRates || Object.keys(exchangeRates).length === 0 ? (
         <div className={styles.loadingContainer}>

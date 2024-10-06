@@ -15,22 +15,7 @@ export const fetchCurrencyData = async () => {
 
     // Dispatch the fetched data to Redux store
     store.dispatch(setCurrencyData(data.conversion_rates));
-
-    return (
-      <div>
-        <h1>Currency Data</h1>
-        <p>Here are the latest conversion rates:</p>
-        <pre>{JSON.stringify(data.conversion_rates, null, 2)}</pre>
-      </div>
-    );
   } catch (error) {
     console.error("Error fetching currency data:", error);
-
-    return (
-      <div>
-        <h1>Currency Data</h1>
-        <p>Error loading conversion rates. Please try again later.</p>
-      </div>
-    );
   }
 };
