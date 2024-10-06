@@ -3,7 +3,9 @@ import store from "@/redux/store";
 
 // Server component, fetches data on the server side (SSR)
 export const fetchCurrencyData = async () => {
-  const apiKey = process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY;
+  const apiKey =
+    process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY || "57b70bd1104b305fb6203bb1";
+
   const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
   try {
