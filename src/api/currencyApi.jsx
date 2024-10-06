@@ -1,4 +1,4 @@
-import { setCurrencyData } from "@/redux/slice/CurrencyConverterSlice";
+import { setCurrencyData } from "@/redux/slice/currencyConverterSlice";
 import store from "@/redux/store";
 
 // Server component, fetches data on the server side (SSR)

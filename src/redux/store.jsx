@@ -6,7 +6,7 @@ import incomeReducer from "../redux/slice/incomeSlice";
 import expensesReducer from "../redux/slice/expenseSlice";
 import incomeSourcesReducer from "../redux/slice/incomeSourcesSlice";
 import spendingHabitsReducer from "../redux/slice/spendingHabitsSlice";
-import currencyConverterReducer from "../redux/slice/CurrencyConverterSlice";
+import currencyConverterReducer from "../redux/slice/currencyConverterSlice";
 
 const store = configureStore({
   reducer: {
